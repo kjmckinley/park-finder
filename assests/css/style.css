@@ -7,3 +7,9 @@ body {
 h1 {
     color: white;
 }
+
+.container {
+    height: 600px;
+    width: 70%;
+    margin: 20px;
+}
