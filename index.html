@@ -15,19 +15,25 @@
     <link rel="icon" href="https://i.pinimg.com/originals/b8/43/e8/
                            b843e8a2da1ac1f0a28b9394015d1a43.png" />
     <!-- Relative Path to CSS Link -->
-    <link rel="stylesheet" href = "assests/css/style.css" />
+    <link rel="stylesheet" href="assests/css/style.css" />
+    <!-- mapbox script and style  -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet' />
 </head>
 
 <body>
     <h1>Park Buddy</h1>
-    <form class = "userZip">
+    <form class="userZip">
         <label for="zipcode">Let's Get Started and Find a Park!</label>
-        <input type="number" id = "zipCode" placeholder="Enter your Zip Code Here!" class="form-input" />
+        <input type="number" id="zipCode" placeholder="Enter your Zip Code Here!" class="form-input" />
         <button>
             Find a Park!
         </button>
     </form>
-    
+    <div class="container" id="map">
+
+    </div>
+
     <!-- Relative Path to JS link -->
     <script type="text/javascript" src="assests/js/script.js"></script>
 </body>
