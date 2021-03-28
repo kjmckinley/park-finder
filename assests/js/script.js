@@ -14,15 +14,35 @@ let parkSearch = function (park) {
     })
 };
 
-let lat = 30.4390489;
-let lng = -97.7360259;
+// let lat = 30.4390489;
+// let lng = -97.7360259;
 mapboxgl.accessToken = 'pk.eyJ1Ijoibml6enlubyIsImEiOiJja21zanJpeWYwaWwzMm9wZnlpbWtzMG1vIn0.OgJmZwe7N5Zy3QWgnhM4vw';
-let map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v11',
-    // center: [-97.7360259, 30.4390489],
-    center: [lng, lat],
-    zoom: 13
-});
 
+// navigator.geolocation.getCurrentPosition(successLocation); get current location
+navigator.geolocation.getCurrentPosition(successLocation,
+    errorLocation, {
+    enableHighAccuracy: true
+})
+
+function successLocation(position) {
+    console.log(position);
+    setUpMap([position.coords.longitude, position.coords.latitude])
+}
+
+function errorLocation() {
+
+}
+
+function setUpMap(center) {
+    let map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        // center: [-97.7360259, 30.4390489],
+        // center: [lng, lat],
+        center: center,
+        zoom: 10
+    })
+};
+
+setUpMap();
 parkSearch();
