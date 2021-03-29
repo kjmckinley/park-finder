@@ -22,11 +22,16 @@
 </head>
 
 <body>
+    <!-- mapbox directions -->
+    <script
+        src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
+    <link rel="stylesheet"
+        href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css"
+        type="text/css">
     <h1>Park Buddy</h1>
     <form class="userZip">
         <label for="zipcode">Let's Get Started and Find a Park!</label>
-        <input type="text" id = "zipCode" placeholder="Enter your Zip Code Here!" class="form-input" />
-
+        <input type="number" id="zipCode" placeholder="Enter your Zip Code Here!" class="form-input" />
         <button>
             Find a Park!
         </button>
