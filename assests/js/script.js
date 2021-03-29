@@ -30,7 +30,7 @@ function successLocation(position) {
 }
 
 function errorLocation() {
-
+    setUpMap([-97.7360259, 30.4390489])
 }
 
 function setUpMap(center) {
@@ -42,7 +42,57 @@ function setUpMap(center) {
         center: center,
         zoom: 10
     })
+
+    // Add zoom and rotation controls to the map.
+    let nav = new mapboxgl.NavigationControl()
+    map.addControl(nav);
+
+    let directions = new MapboxDirections({
+        accessToken: mapboxgl.accessToken
+    })
+
+    map.addControl(directions, "top-left");
+
 };
+
+var geojson = {
+    type: 'FeatureCollection',
+    features: [
+        {
+            type: 'Feature',
+            geometry: {
+                type: 'Point',
+                coordinates: [-77.0368707, 38.9071923]
+            },
+            properties: {
+                title: 'Mapbox',
+                description: 'Washington, D.C.'
+            }
+        },
+        {
+            type: 'Feature',
+            geometry: {
+                type: 'Point',
+                coordinates: [-122.4194155, 37.7749295]
+            },
+            properties: {
+                title: 'Mapbox',
+                description: 'San Francisco, Ca'
+            }
+        }
+    ]
+};
+
+// add markers to map
+geojson.features.forEach(function (marker) {
+    // create a DOM element for the marker
+    var el = document.createElement('div');
+    el.className = 'marker';
+    // add marker to map
+    new mapboxgl.Marker(el)
+        .setLngLat(marker.geometry.coordinates)
+        .addTo(map);
+});
 
 setUpMap();
 parkSearch();
