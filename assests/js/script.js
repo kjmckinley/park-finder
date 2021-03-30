@@ -55,6 +55,11 @@ function setUpMap(center) {
 
 };
 
+// Park search click event
+
+var searchEl = 
+parkSearch 
+
 var geojson = {
     type: 'FeatureCollection',
     features: [
@@ -62,7 +67,7 @@ var geojson = {
             type: 'Feature',
             geometry: {
                 type: 'Point',
-                coordinates: [-77.0368707, 38.9071923]
+                coordinates: [38.9071923, -77.0368707 ]
             },
             properties: {
                 title: 'Mapbox',
@@ -73,7 +78,7 @@ var geojson = {
             type: 'Feature',
             geometry: {
                 type: 'Point',
-                coordinates: [-122.4194155, 37.7749295]
+                coordinates: [37.7749295, -122.4194155]
             },
             properties: {
                 title: 'Mapbox',
@@ -87,7 +92,15 @@ var geojson = {
 geojson.features.forEach(function (marker) {
     // create a DOM element for the marker
     var el = document.createElement('div');
+    console.log(marker.geometry.coordinates);
     el.className = 'marker';
+    el.style.backgroundImage =
+'url(https://placekitten.com/g/' +
+marker.properties.iconSize.join('/') +
+'/)';
+el.style.width = marker.properties.iconSize[0] + 'px';
+el.style.height = marker.properties.iconSize[1] + 'px';
+el.style.backgroundSize = '100%';
     // add marker to map
     new mapboxgl.Marker(el)
         .setLngLat(marker.geometry.coordinates)
