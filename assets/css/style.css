@@ -24,6 +24,8 @@ body {
     background-image: url("../images/bluebonnets.jpg");
     background-color: cornflowerblue;
     background-position: 40% 60%;
+    background-size: cover;
+    background-attachment: fixed;
     color: ivory;
     background-repeat: no-repeat;
     background-size: cover;
