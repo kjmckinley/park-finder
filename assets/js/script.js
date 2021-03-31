@@ -17,28 +17,28 @@ let parkSearch = function (park) {
 mapboxgl.accessToken = 'pk.eyJ1Ijoibml6enlubyIsImEiOiJja21zanJpeWYwaWwzMm9wZnlpbWtzMG1vIn0.OgJmZwe7N5Zy3QWgnhM4vw';
 
 // navigator.geolocation.getCurrentPosition(successLocation); get current location
-navigator.geolocation.getCurrentPosition(successLocation,
-    errorLocation, {
-    enableHighAccuracy: true
-})
+// navigator.geolocation.getCurrentPosition(successLocation,
+//     errorLocation, {
+//     enableHighAccuracy: true
+// })
 
 function successLocation(position) {
     console.log(position);
     setUpMap([position.coords.longitude, position.coords.latitude])
-};
+}
 
 function errorLocation() {
     setUpMap([-97.7360259, 30.4390489])
-};
+}
 
-function setUpMap(center) {
+function setUpMap() {
     let map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v11',
         // center: [-97.7360259, 30.4390489],
         // center: [lng, lat],
-        center: center,
-        zoom: 10
+        center: [-95.67515759999999, 39.0473451],
+        zoom: 3
     })
 
     // Add zoom and rotation controls to the map.
@@ -56,10 +56,71 @@ function setUpMap(center) {
 var marker = new mapboxgl.Marker({
     color: "green",
     draggable: true
-    }).setLngLat([-97.7360259, 30.4390489])
+    }).setLngLat([-95.67515759999999, 39.0473451])
     .addTo(map);
 
 };
+
+//
+function formatQueryParams(params) {
+    const queryItems = Object.keys(params).map(key => `${[encodeURIComponent(key)]}=${encodeURIComponent(params[key])}`);
+    return queryItems.join('&');
+}
+
+function displayResults(responseJson, maxResults) {
+    console.log(responseJson);
+    // Clearing previous results
+    $('.js-error-message').empty();
+    $('.list-of-results').empty();
+    // Looping through the response and formatting results
+    for (let i = 0; i < responseJson.data.length & i < maxResults; i++) {
+        $('.list-of-results').append(`<li><h3><a class ='park-title' target = '_blank' href="${responseJson.data[i].url}">${responseJson.data[i].fullName}</a></h3>
+        <p class='park-description'>${responseJson.data[i].description}</p>
+        </li>`);
+    }
+
+    $('.results').removeClass('hidden');
+}
+
+function getParks(baseUrl, postalArr, maxResults, apiKey) {
+    // Setting up parameters
+    const params = {
+        postalCode: postalArr,
+        limit: maxResults
+    }
+    // Creating url string
+    const queryString = formatQueryParams(params);
+    const url = baseUrl + '?' + queryString + '&api_key=' + apiKey;
+    console.log(url);
+   
+    // Fetch information, if there's an error display a message
+    fetch(url)
+    .then(response => {
+        if (response.ok) {
+            return response.json();
+        }
+        throw new Error(response.statusText);
+    })
+    .then(responseJson => displayResults(responseJson, maxResults))
+    .catch(err => {
+        $('.js-error-message').text(`Something went wrong: ${err.message}`);
+    });
+}
+
+// Watch search form for submit, call getParks
+function watchForm() {
+    $('.list-form').on('submit', function() {
+        event.preventDefault();
+        const baseUrl = 'https://api.nps.gov/api/v1/parks'
+        const postalArr = $('#js-user-search').val().split(",");
+        const maxResults = 3;
+        // Insert your own NPS API key for the value of apiKey.
+        const apiKey = 'hDoeeZ7apdh5CLqUvw666RjMerqx0fxT6xfnGErl';
+        getParks(baseUrl, postalArr, maxResults, apiKey);
+    })
+}
+
+$(watchForm);
 
 // Add event listener to search button
 // let buttonEl = document.getElementById("find-park");
