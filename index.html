@@ -15,6 +15,9 @@
                            b843e8a2da1ac1f0a28b9394015d1a43.png" />
     <!-- Relative Path to CSS Link -->
     <link rel="stylesheet" href="assests/css/style.css" />
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
     <!-- mapbox script and style  -->
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet' />
@@ -42,19 +45,21 @@
     <section class="hero">
         <div class="hero-body">
             <p class="title">
-                <a href="/">Park Buddy</a>
+                <a href="index.html">Park Buddy</a>
             </p>
             <header>
                 <h1 class="subtitle">
                     U.S. National Parks Finder
                 </h1>
                 <nav>
-                    <ul>
-                        <form id="form">
-                            <input type="search" id="query" name="q" placeholder="Natty Park Finder">
-                            <button>Search</button>
+                   
+                        <form class ="list-form">
+                            <lable for ="user-search"> Enter your zipcode: </lable>
+                            <input type="search" name="user-search" id="js-user-search" placeholder="Natty Park Finder" required />
+                            <input type="submit" value="Search!">
                         </form>
-                    </ul>
+
+                        <p class="js-error-message"></p>          
                 </nav>
                 <!-- <nav>
                         <ul>
@@ -71,7 +76,7 @@
             <section id="reach-out" class="about">
                 <div class="flex-row">
                     <h2 class="section-title secondary-border">
-                        Natty Parks Go Here<br><br>
+                    <br /><br />
                         <!-- Slideshow container -->
                         <div class="slideshow-container">
 
@@ -107,7 +112,22 @@
                         </div>
                 </div>
                 <!-- End Natty (List?)-->
-                <div class="container" id="map"></div>
+                <div class="container">
+                    <div class="map-container" id="map"></div>
+
+                    <div class="park-container">
+                        <section class="results hidden" role="region">
+                            <ul class="list-of-results"></ul>
+                        </section>
+                    </div>
+                   
+                </div>
+            </section>
+                
+                
+                
+                
+
 
 <!-- bulma footer under construction -->
 <!-- footer 

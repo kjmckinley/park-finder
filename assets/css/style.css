@@ -1,9 +1,6 @@
-title {
-    padding: 15px 20px;
-    text-align: center;
-    max-width: max-content;
-    color: ivory;
-}
+* {box-sizing:border-box}
+
+
 
 header {
     padding: 20px 35px;
@@ -30,7 +27,15 @@ body {
     background-size: cover;
 }
 
-* {box-sizing:border-box}
+a {
+    color: ivory
+}
+
+.title {
+    padding: 15px 20px;
+    text-align: center;
+    max-width: max-content;
+}
 
 /* Slideshow container */
 .slideshow-container {
@@ -115,6 +120,56 @@ body {
   animation-duration: 1.5s;
 }
 
+/* styling container for map and park content */
+
+.container {
+    padding: 20px;
+}
+
+.map-container {
+    height: 100vh;
+    width: 40vw;
+    float: left;
+    margin: 20px;
+}
+.park-container {
+    height: 100vh;
+    width: 33vw;
+    float: left;
+    margin: 20px;
+    margin-left: 40px;
+
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: rgb(177, 177, 177, 0.7);
+}
+
+.list-of-results {
+    margin: 0px 5px 5px;
+    
+}
+
+.hidden {
+    display: none;
+}
+
+footer {
+    padding: 20px 30px;
+    background-color: rgba(100, 148, 237, 0.500);
+    color: rgba(100, 148, 237, 0.500);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+}
+
 @-webkit-keyframes fade {
   from {opacity: .4}
   to {opacity: 1}
@@ -125,27 +180,9 @@ body {
   to {opacity: 1}
 }
 
-footer {
-    padding: 25px 35px;
-    background-color: rgba(100, 148, 237, 0.500);
-    color: rgba(100, 148, 237, 0.500);
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    z-index: 9999;
-}
 
-/* styling container for map */
-.container {
-    height: 100vh;
-    width: 50vw;
-    margin: 20px;
-}
+
+
 
 /* .marker {
     background-image: url(/assests/img/36-369401_location-marker-icon-google-maps-pointer-elsavadorla-google.png);
