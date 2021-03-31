@@ -33,6 +33,7 @@ body {
 }
 
 
+
 /* Slideshow container */
 .slideshow-container {
   max-width: 1000px;
@@ -137,7 +138,12 @@ body {
 
     border: 1px solid black;
     border-radius: 5px;
-    background-color: rgb(177, 177, 177);
+    background-color: rgb(177, 177, 177, 0.7);
+}
+
+.list-of-results {
+    margin: 0px 5px 5px;
+    
 }
 
 .hidden {
