@@ -25,11 +25,11 @@ navigator.geolocation.getCurrentPosition(successLocation,
 function successLocation(position) {
     console.log(position);
     setUpMap([position.coords.longitude, position.coords.latitude])
-}
+};
 
 function errorLocation() {
     setUpMap([-97.7360259, 30.4390489])
-}
+};
 
 function setUpMap(center) {
     let map = new mapboxgl.Map({
@@ -50,6 +50,14 @@ function setUpMap(center) {
     })
 
     map.addControl(directions, "top-left");
+
+    //add marker to set coordinates
+    // Set options
+var marker = new mapboxgl.Marker({
+    color: "green",
+    draggable: true
+    }).setLngLat([-97.7360259, 30.4390489])
+    .addTo(map);
 
 };
 
