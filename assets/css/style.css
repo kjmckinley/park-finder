@@ -1,11 +1,6 @@
 * {box-sizing:border-box}
 
-.title {
-    padding: 15px 20px;
-    text-align: center;
-    max-width: max-content;
-    color: ivory;
-}
+
 
 header {
     padding: 20px 35px;
@@ -32,7 +27,12 @@ body {
     background-size: cover;
 }
 
-
+.title {
+    padding: 15px 20px;
+    text-align: center;
+    max-width: max-content;
+    color: ivory;
+}
 
 /* Slideshow container */
 .slideshow-container {
