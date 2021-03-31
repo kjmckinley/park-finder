@@ -61,6 +61,7 @@ footer {
     z-index: 9999;
 }
 
+<<<<<<< HEAD
 
 
 /* Tells EVERY Element to Not Have Any Margin Border */
@@ -632,3 +633,20 @@ section {
         order: 3;
     }
 }
+=======
+/* styling container for map */
+.container {
+    height: 100vh;
+    width: 100vw;
+    margin: 20px;
+}
+
+/* .marker {
+    background-image: url(/assests/img/36-369401_location-marker-icon-google-maps-pointer-elsavadorla-google.png);
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+} */
+>>>>>>> feature/mapbox-api
