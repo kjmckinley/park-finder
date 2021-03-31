@@ -1,104 +1,89 @@
+<!-- PARK BUDDY -->
+
 <!DOCTYPE html>
-<html lang="en">
+    <html lang="en">
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Park Buddy</title>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+        
+        <title>Park Buddy</title>
 
-    <!-- LINKS -->
-    <!-- Tab Icon Link -->
-    <link rel="icon" href="https://i.pinimg.com/originals/b8/43/e8/
-                           b843e8a2da1ac1f0a28b9394015d1a43.png" />
-    <!-- Relative Path to CSS Link -->
-    <link rel="stylesheet" href="assests/css/style.css" />
-    <!-- mapbox script and style  -->
-    <script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet' />
-</head>
+        <!-- LINKS -->
+        <!-- Tab Icon Link -->
+        <link rel="icon" href="https://i.pinimg.com/originals/b8/43/e8/
+                            b843e8a2da1ac1f0a28b9394015d1a43.png" />
 
-<body>
-    <!-- mapbox directions -->
-  
-    <h1>Park Buddy</h1>
-    <form class="userZip">
-        <label for="zipcode">Let's Get Started and Find a Park!</label>
-        <input type="number" id="zipCode" placeholder="Enter your Zip Code Here!" class="form-input" />
-        <button>
-            Find a Park!
-        </button>
-    </form>
-    <div class="container" id="map">
+        <link rel="stylesheet" href="./assets/css/style.css">
+        <!-- BULMA -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+    
+        <!-- mapbox script and style  -->
+        <script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
+        <link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet' />
+        <link rel="icon"
+            href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/microsoft/209/national-park_1f3de.png">
+    </head>
 
-    </div>
 
-    <!-- Relative Path to JS link -->
-    <script type="text/javascript" src="assests/js/script.js"></script>
-    <link rel="icon"
-        href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/microsoft/209/national-park_1f3de.png">
-</head>
+    <body>
+        
+        <!-- navigation -->
+        <header>
+            <h1>
+                <a href="index.html">Park Buddy</a>
+            </h1>
+            <nav>
+                <ul>
+                    <form id="form">
+                        <input type="search" id="query" name="q" placeholder="Natty Park Finder">
+                        <button>Search</button>
+                    </form>
+                </ul>
+            </nav>
+        </header>
+        <!-- end navigation -->
 
-<body>
-    <!-- navigation -->
-    <header>
-        <h1>
-            <a href="index.html">Park Buddy</a>
-        </h1>
-        <nav>
-            <ul>
-                <form id="form">
-                    <input type="search" id="query" name="q" placeholder="Natty Park Finder">
-                    <button>Search</button>
-                </form>
-            </ul>
-        </nav>
-    </header>
-    <!-- end navigation -->
+        <form class="userZip">
+            <label for="zipcode">Let's Get Started and Find a Park!</label>
+            <input type="number" id="zipCode" placeholder="Enter your Zip Code Here!" class="form-input" />
+            <button>
+                Find a Park!
+            </button>
+        </form>
+        <div class="container" id="map">
 
-    <!-- Natty Parks (List?) start -->
-    <section id="reach-out" class="about">
-        <div class="flex-row">
-            <h2 class="section-title secondary-border">
-                Natty Parks Go Here
-            </h2>
         </div>
-        <!-- End Natty (List?)-->
 
-        <!-- Map Placeholder -->
-        <section class="hero">
-            <div class="hero-cta">
-                <h2> The "Placeholder" Map</h2>
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d12182.30520634488!2d-74.0652613!3d40.2407219!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1561060983193!5m2!1sen!2sus"
-                    frameborder="0" style="border:0" allowfullscreen>
-                </iframe>
+        <!-- Natty Parks (List?) start -->
+        <section id="parks-list" class="about">
+            <div class="flex-row">
+                <h2 class="section-title secondary-border">
+                    Natty Parks Go Here
+                </h2>
             </div>
-            <!-- End Map -->
-</body>
 
-<footer>
-    <!-- footer -->
-    <footer>
-        <h2>PARK IT!</h2>
-        <div>
-            &copy; 2021 PARK IT!
-            <ul>
-                <a href="./about.html">About</a>
-            </ul>
-        </div>
-    </footer>
-    <!-- footer end -->
-</footer>
+        <footer>
+            <!-- footer -->
+            <footer>
+                <h2>PARK IT!</h2>
+                <div>
+                    &copy; 2021 PARK IT!
+                    <ul>
+                        <a href="./about.html">About</a>
+                    </ul>
+                </div>
+            </footer>
+            <!-- footer end -->
+        </footer> 
+
+        <script
+                src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
+                <link rel="stylesheet"
+                href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css"
+                type="text/css" />
+
+    </body>
 
 </html>
-
-
-
-<script
-src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
-<link rel="stylesheet"
-href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css"
-type="text/css">
