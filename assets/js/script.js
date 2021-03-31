@@ -17,10 +17,10 @@ let parkSearch = function (park) {
 mapboxgl.accessToken = 'pk.eyJ1Ijoibml6enlubyIsImEiOiJja21zanJpeWYwaWwzMm9wZnlpbWtzMG1vIn0.OgJmZwe7N5Zy3QWgnhM4vw';
 
 // navigator.geolocation.getCurrentPosition(successLocation); get current location
-navigator.geolocation.getCurrentPosition(successLocation,
-    errorLocation, {
-    enableHighAccuracy: true
-})
+// navigator.geolocation.getCurrentPosition(successLocation,
+//     errorLocation, {
+//     enableHighAccuracy: true
+// })
 
 function successLocation(position) {
     console.log(position);
@@ -31,14 +31,14 @@ function errorLocation() {
     setUpMap([-97.7360259, 30.4390489])
 }
 
-function setUpMap(center) {
+function setUpMap() {
     let map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v11',
         // center: [-97.7360259, 30.4390489],
         // center: [lng, lat],
-        center: center,
-        zoom: 10
+        center: [-95.67515759999999, 39.0473451],
+        zoom: 3
     })
 
     // Add zoom and rotation controls to the map.

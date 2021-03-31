@@ -127,14 +127,14 @@ a {
 }
 
 .map-container {
-    height: 100vh;
-    width: 40vw;
+    height: 50vh;
+    width: 50vw;
     float: left;
     margin: 20px;
 }
 .park-container {
-    height: 100vh;
-    width: 33vw;
+    height: 50vh;
+    width: 25vw;
     float: left;
     margin: 20px;
     margin-left: 40px;
