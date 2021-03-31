@@ -51,8 +51,15 @@ function setUpMap() {
 
     map.addControl(directions, "top-left");
 
-};
+    //add marker to set coordinates
+    // Set options
+var marker = new mapboxgl.Marker({
+    color: "green",
+    draggable: true
+    }).setLngLat([-95.67515759999999, 39.0473451])
+    .addTo(map);
 
+};
 
 //
 function formatQueryParams(params) {
