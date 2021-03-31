@@ -27,11 +27,14 @@ body {
     background-size: cover;
 }
 
+a {
+    color: ivory
+}
+
 .title {
     padding: 15px 20px;
     text-align: center;
     max-width: max-content;
-    color: ivory;
 }
 
 /* Slideshow container */
