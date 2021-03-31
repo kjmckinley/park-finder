@@ -1,6 +1,6 @@
 * {box-sizing:border-box}
 
-title {
+.title {
     padding: 15px 20px;
     text-align: center;
     max-width: max-content;
