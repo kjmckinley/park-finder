@@ -1,5 +1,4 @@
 // PARK BUDDY
-// PARK BUDDY
 
 let parkSearch = function (park) {
     let apiUrl = "https://api.mapbox.com/geocoding/v5/mapbox.places/Texas.json?access_token=pk.eyJ1Ijoibml6enlubyIsImEiOiJja21zanJpeWYwaWwzMm9wZnlpbWtzMG1vIn0.OgJmZwe7N5Zy3QWgnhM4vw";
