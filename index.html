@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    <!-- mapbox directions -->
+    <!-- mapbox directions need to be at top of body -->
     <script
         src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
     <link rel="stylesheet"
@@ -58,9 +58,6 @@
         </nav>
     </div> 
 </section> -->
-        </header>
-
-        <body>
             <!-- navigation
 
     <header>
@@ -75,12 +72,13 @@
     </header> -->
 
     <!-- end navigation -->
+    <header>
     <section class="hero">
         <div class="hero-body">
             <p class="title">
                 <a href="/">Park Buddy</a>
             </p>
-            <header>
+            
                 <h1 class="subtitle">
                     U.S. National Parks Finder
                 </h1>
@@ -163,22 +161,12 @@
                 </div>
                 <!-- End Natty (List?)-->
 
+<!-- Map  -->
                 <div class="container" id="map"></div>
+<!-- End Map -->
 
 <!-- bulma footer under construction -->
 <!-- footer 
-
-
-                <!-- Map Placeholder -->
-                <section class="hero">
-                    <div class="hero-cta">
-                        <h2> The "Placeholder" Map</h2>
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d12182.30520634488!2d-74.0652613!3d40.2407219!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1561060983193!5m2!1sen!2sus"
-                            frameborder="0" style="border:0" allowfullscreen>
-                        </iframe>
-                    </div>
-                    <!-- End Map -->
         </body>
 
         <!-- bulma footer under construction -->
@@ -194,21 +182,9 @@
     </div>
 
 </footer>
- footer end -->
-
-<footer class="footer">
-    <div class="content has-text-centered">
-        <p>
-            <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is
-            licensed
-            <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
-            is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
-        </p>
-    </div>
-
-</footer>
- footer end -->
-
+<-- end -->
+ 
+            <!-- footer -->
         <footer class="footer">
             <div class="content has-text-centered">
                 <p>
@@ -219,7 +195,7 @@
                 </p>
             </div>
         </footer>
-
+<!-- footer end -->
 
 
 <!-- Relative Path to JS link -->
