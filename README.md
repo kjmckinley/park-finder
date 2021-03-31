@@ -1,17 +1,17 @@
 <!-- PARK BUDDY -->
 
-# All-Abilities Park Finder:
+# Park Finder:
 Name Pending →  Park-Buddy, Park Pal(?) 
 
 ## Description:
 
-This collaborated project application is meant to be used as a service for those in the differently abled community to find the nearest all-abilities park in their area as well as the most convenient means of getting there. It will also provide information on park hours, current weather conditions and avg. foot traffic at that time of day.
+This collaborated project application is meant to be used as a service for those looking to find the nearest national park in their area as well as the most convenient means of getting there.
 
 ## User Story:
 
 ```
-AS A person who is differently abled or who has a loved one who is differently abled,
-I WANT find the nearest all-abilities parks in my area
+AS A person or a person who has a loved one,
+I WANT find the nearest national parks in my area
 SO THAT me or my loved one can make memories in a safe and fully interactive environment.
 ```
 
