@@ -13,6 +13,15 @@
     <!-- Tab Icon Link -->
     <link rel="icon" href="https://i.pinimg.com/originals/b8/43/e8/
                            b843e8a2da1ac1f0a28b9394015d1a43.png" />
+<<<<<<< HEAD
+=======
+    <!-- Relative Path to CSS Link -->
+    <link rel="stylesheet" href="assests/css/style.css" />
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
+>>>>>>> feature/mapbox-api
     <!-- mapbox script and style  -->
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet' />
@@ -76,19 +85,22 @@
     <section class="hero">
         <div class="hero-body">
             <p class="title">
-                <a href="/">Park Buddy</a>
+                <a href="index.html">Park Buddy</a>
             </p>
             
                 <h1 class="subtitle">
                     U.S. National Parks Finder
                 </h1>
                 <nav>
-                    <ul>
-                        <form id="form">
-                            <input type="search" id="query" name="q" placeholder="Natty Park Finder">
-                            <button>Search</button>
-                        </form>
-                    </ul>
+
+                    <form class="list-form">
+                        <lable for="user-search"> Enter your zipcode: </lable>
+                        <input type="search" name="user-search" id="js-user-search" placeholder="Natty Park Finder"
+                            required />
+                        <input type="submit" value="Search!">
+                    </form>
+
+                    <p class="js-error-message"></p>
                 </nav>
                 <!-- <nav>
                         <ul>
@@ -105,7 +117,7 @@
             <section id="reach-out" class="about">
                 <div class="flex-row">
                     <h2 class="section-title secondary-border">
-                        Natty Parks Go Here<br><br>
+                        <br /><br />
                         <!-- Slideshow container -->
                         <div class="slideshow-container">
 
@@ -160,6 +172,7 @@
                         </div>
                 </div>
                 <!-- End Natty (List?)-->
+<<<<<<< HEAD
 
 <!-- Map  -->
                 <div class="container" id="map"></div>
@@ -172,6 +185,27 @@
         <!-- bulma footer under construction -->
         <!-- footer 
 
+=======
+                <div class="container">
+                    <div class="map-container" id="map"></div>
+
+                    <div class="park-container">
+                        <section class="results hidden" role="region">
+                            <ul class="list-of-results"></ul>
+                        </section>
+                    </div>
+
+                </div>
+            </section>
+
+
+
+
+
+
+            <!-- bulma footer under construction -->
+            <!-- footer 
+>>>>>>> feature/mapbox-api
 <footer>
     <h2>PARK IT!</h2>
     <div>
@@ -180,6 +214,22 @@
             <a href="./about.html">About</a>
         </ul>
     </div>
+<<<<<<< HEAD
+=======
+</footer>
+ footer end -->
+
+            <footer class="footer">
+                <div class="content has-text-centered">
+                    <p>
+                        <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is
+                        licensed
+                        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+                        is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+                    </p>
+                </div>
+            </footer>
+>>>>>>> feature/mapbox-api
 
 </footer>
 <-- end -->
@@ -198,8 +248,8 @@
 <!-- footer end -->
 
 
-<!-- Relative Path to JS link -->
-<script type="text/javascript" src="assets/js/script.js"></script>
+            <!-- Relative Path to JS link -->
+            <script type="text/javascript" src="assets/js/script.js"></script>
 </body>
 
 </html>
