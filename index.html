@@ -15,6 +15,9 @@
                            b843e8a2da1ac1f0a28b9394015d1a43.png" />
     <!-- Relative Path to CSS Link -->
     <link rel="stylesheet" href="assests/css/style.css" />
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
     <!-- mapbox script and style  -->
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet' />
@@ -28,43 +31,6 @@
         href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css"
         type="text/css">
     <!-- navigation
-
-    <link rel="icon"
-        href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/microsoft/209/national-park_1f3de.png">
-</head>
-
-<section class="hero">
-    <div class="hero-body">
-            <p class="title">
-                <a href="/">Park Buddy</a>
-            </p>
-            <header>
-            <h1 class="subtitle">
-                U.S. National Parks Finder
-            </h1>
-            <nav>
-                <ul>
-                    <form id="form">
-                        <input type="search" id="query" name="q" placeholder="Natty Park Finder">
-                        <button>Search</button>
-                    </form>
-                </ul>
-            </nav>
-            <!-- <nav>
-            <ul>
-                <form id="form">
-                    <input type="search" id="query" name="q" placeholder="Natty Park Finder">
-                    <button>Search</button>
-                </form>
-            </ul>
-        </nav>
-    </div> 
-</section> -->
-        </header>
-
-        <body>
-            <!-- navigation
-
     <header>
         <nav>
             <ul>
@@ -75,24 +41,25 @@
             </ul>
         </nav>
     </header> -->
-
     <!-- end navigation -->
     <section class="hero">
         <div class="hero-body">
             <p class="title">
-                <a href="/">Park Buddy</a>
+                <a href="index.html">Park Buddy</a>
             </p>
             <header>
                 <h1 class="subtitle">
                     U.S. National Parks Finder
                 </h1>
                 <nav>
-                    <ul>
-                        <form id="form">
-                            <input type="search" id="query" name="q" placeholder="Natty Park Finder">
-                            <button>Search</button>
+                   
+                        <form class ="list-form">
+                            <lable for ="user-search"> Enter your zipcode: </lable>
+                            <input type="search" name="user-search" id="js-user-search" placeholder="Natty Park Finder" required />
+                            <input type="submit" value="Search!">
                         </form>
-                    </ul>
+
+                        <p class="js-error-message"></p>          
                 </nav>
                 <!-- <nav>
                         <ul>
@@ -109,7 +76,7 @@
             <section id="reach-out" class="about">
                 <div class="flex-row">
                     <h2 class="section-title secondary-border">
-                        Natty Parks Go Here<br><br>
+                    <br /><br />
                         <!-- Slideshow container -->
                         <div class="slideshow-container">
 
@@ -119,25 +86,6 @@
                                 <img src="tonto_national_forest.jpg" style="width:50%">
                                 <div class="text">Tonto</div>
                             </div>
-
-
-            <!-- end navigation -->
-
-            <!-- Natty Parks (List?) start -->
-            <section id="reach-out" class="about">
-                <div class="flex-row">
-                    <h2 class="section-title secondary-border">
-                        Natty Parks Go Here<br><br>
-                        <!-- Slideshow container -->
-                        <div class="slideshow-container">
-
-                            <!-- Full-width images with number and caption text -->
-                            <div class="mySlides fade">
-                                <div class="numbertext">1 / 3</div>
-                                <img src="tonto_national_forest.jpg" style="width:50%">
-                                <div class="text">Tonto</div>
-                            </div>
-
 
                             <div class="mySlides fade">
                                 <div class="numbertext">2 / 3</div>
@@ -164,28 +112,25 @@
                         </div>
                 </div>
                 <!-- End Natty (List?)-->
+                <div class="container">
+                    <div class="map-container" id="map"></div>
 
-                <div class="container" id="map"></div>
+                    <div class="park-container">
+                        <section class="results hidden" role="region">
+                            <ul class="list-of-results"></ul>
+                        </section>
+                    </div>
+                   
+                </div>
+            </section>
+                
+                
+                
+                
+
 
 <!-- bulma footer under construction -->
 <!-- footer 
-
-
-                <!-- Map Placeholder -->
-                <section class="hero">
-                    <div class="hero-cta">
-                        <h2> The "Placeholder" Map</h2>
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d12182.30520634488!2d-74.0652613!3d40.2407219!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1561060983193!5m2!1sen!2sus"
-                            frameborder="0" style="border:0" allowfullscreen>
-                        </iframe>
-                    </div>
-                    <!-- End Map -->
-        </body>
-
-        <!-- bulma footer under construction -->
-        <!-- footer 
-
 <footer>
     <h2>PARK IT!</h2>
     <div>
@@ -194,7 +139,6 @@
             <a href="./about.html">About</a>
         </ul>
     </div>
-
 </footer>
  footer end -->
 
@@ -207,20 +151,7 @@
             is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
         </p>
     </div>
-
 </footer>
- footer end -->
-
-        <footer class="footer">
-            <div class="content has-text-centered">
-                <p>
-                    <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is
-                    licensed
-                    <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
-                    is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
-                </p>
-            </div>
-        </footer>
 
 
 
