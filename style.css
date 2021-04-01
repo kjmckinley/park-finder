@@ -131,6 +131,7 @@ a {
     margin: 20px;
 }
 .park-container {
+    overflow: hidden;
     height: 50vh;
     width: 25vw;
     float: left;
