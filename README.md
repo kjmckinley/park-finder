@@ -33,8 +33,8 @@ The following image/animation demonstrates the application functionality:
 ![application demo]()
 
 ## Application-Links:
-GitHub Repo Link:
-Deployed Link:
+GitHub Repo Link: https://github.com/kjmckinley/park-finder
+Deployed Link: https://kjmckinley.github.io/park-finder/
 
 ## Resource-Citations:
 ## Contributors:
