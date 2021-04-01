@@ -38,6 +38,6 @@ Deployed Link: https://kjmckinley.github.io/park-finder/
 
 ## Resource-Citations:
 ## Contributors:
-McKinley, Kyle: https://github.com/kjmckinley
-Ortiz, Richard: https://github.com/xRitchie91
-Harbison, Noah: https://github.com/nizzyno
+- McKinley, Kyle: https://github.com/kjmckinley
+- Ortiz, Richard: https://github.com/xRitchie91
+- Harbison, Noah: https://github.com/nizzyno
