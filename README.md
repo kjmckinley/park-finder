@@ -38,7 +38,6 @@ Deployed Link:
 
 ## Resource-Citations:
 ## Contributors:
-McKinley, Kyle: [personal github page link here]
-Ortiz, Richard: [personal github page link here]
-Martinez, Dulce: [personal github page link here]
-Harbison, Noah: [personal github page link here]
+McKinley, Kyle: https://github.com/kjmckinley
+Ortiz, Richard: https://github.com/xRitchie91
+Harbison, Noah: https://github.com/nizzyno
