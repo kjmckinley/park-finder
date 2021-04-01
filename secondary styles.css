@@ -1,0 +1,44 @@
+.title {
+    padding: 15px 20px;
+    max-width: max-content;
+    color: ivory;
+}
+
+header {
+    padding: 20px 35px;
+    background-color: rgba(100, 148, 237, 0.500);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    top: 0;
+    z-index: 9999;
+  }
+
+h1 {
+    color: ivory;
+}
+
+body {
+    background-image: url("../images/bluebonnets.jpg");
+    background-color: cornflowerblue;
+    background-position: 40% 60%;
+    color: ivory;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+footer {
+    padding: 30px 35px;
+    background-color: rgba(100, 148, 237, 0.500);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+}
