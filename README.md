@@ -1,7 +1,7 @@
 <!-- PARK BUDDY -->
 
 # Park Finder:
-Name Pending →  Park-Buddy, Park Pal(?) 
+Park Buddy 
 
 ## Description:
 
@@ -10,8 +10,13 @@ This collaborated project application is meant to be used as a service for those
 ## User Story:
 
 ```
+
 AS A person or a person who has a loved one,
 I WANT find the nearest state or national parks in my area
+
+AS A person who wants to visit a national park,
+I WANT find the nearest national parks in my area
+
 SO THAT me or my loved one can make memories in a safe and fully interactive environment.
 ```
 
@@ -33,12 +38,11 @@ The following image/animation demonstrates the application functionality:
 ![application demo]()
 
 ## Application-Links:
-GitHub Repo Link:
-Deployed Link:
+- GitHub Repo Link: https://github.com/kjmckinley/park-finder
+- Deployed Link: https://kjmckinley.github.io/park-finder/
 
 ## Resource-Citations:
 ## Contributors:
-McKinley, Kyle: [personal github page link here]
-Ortiz, Richard: [personal github page link here]
-Martinez, Dulce: [personal github page link here]
-Harbison, Noah: [personal github page link here]
+- McKinley, Kyle: https://github.com/kjmckinley
+- Ortiz, Richard: https://github.com/xRitchie91
+- Harbison, Noah: https://github.com/nizzyno
