@@ -11,7 +11,7 @@ This collaborated project application is meant to be used as a service for those
 
 ```
 AS A person or a person who has a loved one,
-I WANT find the nearest national parks in my area
+I WANT find the nearest state or national parks in my area
 SO THAT me or my loved one can make memories in a safe and fully interactive environment.
 ```
 
