@@ -82,10 +82,10 @@ function displayResults(responseJson, maxResults) {
     $('.results').removeClass('hidden');
 }
 
-function getParks(baseUrl, postalArr, maxResults, apiKey) {
+function getParks(baseUrl, stateArr, maxResults, apiKey) {
     // Setting up parameters
     const params = {
-        postalCode: postalArr,
+        stateCode: stateArr,
         limit: maxResults
     }
     // Creating url string
@@ -112,11 +112,11 @@ function watchForm() {
     $('.list-form').on('submit', function() {
         event.preventDefault();
         const baseUrl = 'https://api.nps.gov/api/v1/parks'
-        const postalArr = $('#js-user-search').val().split(",");
+        const stateArr = $('#js-user-search').val().split(",");
         const maxResults = 3;
         // Insert your own NPS API key for the value of apiKey.
         const apiKey = 'hDoeeZ7apdh5CLqUvw666RjMerqx0fxT6xfnGErl';
-        getParks(baseUrl, postalArr, maxResults, apiKey);
+        getParks(baseUrl, stateArr, maxResults, apiKey);
     })
 }
 

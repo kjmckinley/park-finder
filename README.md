@@ -10,8 +10,13 @@ This collaborated project application is meant to be used as a service for those
 ## User Story:
 
 ```
+
+AS A person or a person who has a loved one,
+I WANT find the nearest state or national parks in my area
+
 AS A person who wants to visit a national park,
 I WANT find the nearest national parks in my area
+
 SO THAT me or my loved one can make memories in a safe and fully interactive environment.
 ```
 
