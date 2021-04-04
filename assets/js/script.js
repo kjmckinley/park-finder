@@ -74,7 +74,7 @@ function displayResults(responseJson, maxResults) {
     $('.list-of-results').empty();
     // Looping through the response and formatting results
     for (let i = 0; i < responseJson.data.length & i < maxResults; i++) {
-        $('.list-of-results').append(`<li><h3><a class ='park-title' target = '_blank' href="${responseJson.data[i].url}">${responseJson.data[i].fullName}</a></h3>
+        $('.list-of-results').append(`<li><h3><a class ='park-title' target = '_blank' href="${responseJson.data[i].url}">${responseJson.data[i].fullName}</a></h3><input
         <p class='park-description'>${responseJson.data[i].description}</p>
         </li>`);
     }
