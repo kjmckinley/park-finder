@@ -58,8 +58,6 @@ function setUpMap() {
 //     draggable: true
 //     }).setLngLat([-95.67515759999999, 39.0473451])
 //     .addTo(map);
-
-
 };
 
 // Used from rposner16
