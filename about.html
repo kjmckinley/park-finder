@@ -10,54 +10,170 @@
     <title>Park Buddy</title>
     <link rel="icon"
         href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/microsoft/209/national-park_1f3de.png">
+
+    <!-- LINKS -->
+    <!-- Tab Icon Link -->
+    <link rel="icon" href="https://i.pinimg.com/originals/b8/43/e8/
+                           b843e8a2da1ac1f0a28b9394015d1a43.png" />
+    <!-- Relative Path to CSS Link -->
+    <link rel="stylesheet" href="assests/css/style.css" />
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
+    <!-- mapbox script and style  -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet' />
 </head>
 
 <body>
-    <!-- navigation -->
-    <header>
-        <h1>
-            <a href="index.html">Park Buddy</a>
-        </h1>
-        <nav>
-            <ul>
-                <form id="form">
-                    <input type="search" id="query" name="q" placeholder="Natty Park Finder">
-                    <button>Search</button>
-                </form>
-            </ul>
-        </nav>
-    </header>
-    <!-- "About" start -->
-    <section id="reach-out" class="about">
-        <div class="flex-row">
-            <h2 class="section-title secondary-border">
-                About
-            </h2>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi illo dicta,
-                corporis eveniet libero reprehenderit officia magnam!
-                Iure corporis necessitatibus praesentium, ex minima, hic,
-                tenetur pariatur libero at odio consectetur!</p>
-        </div>
 
-        <iframe src="" frameborder="0" style="border:0" allowfullscreen>
-        </iframe>
+    <!-- mapbox directions -->
+    <script
+        src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
+    <link rel="stylesheet"
+        href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css"
+        type="text/css">
+
+    <section class="hero is-info is-small">
+        <div class="hero-head">
+            <nav class="navbar">
+                <div class="container">
+                    <div class="navbar-brand">
+                        <p class="title">
+                            Park Buddy
+                        </p>
+                        </a>
+                        <span class="navbar-burger" data-target="navbarMenuHeroB">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </div>
+                    <div id="navbarMenuHeroB" class="navbar-menu">
+                        <div class="navbar-end">
+                            <a class="navbar-item" href="./index.html">
+                                <b>Home</b>
+                            </a>
+                            <a class="navbar-item" href="./about.html">
+                                <b>About</b>
+                            </a>
+                            <span class="navbar-item">
+                                <a class="button is-info is-inverted" href="https://www.nps.gov/index.htm">
+                                    <span class="icon">
+                                     
+                                    </span>
+                                    <span><b>NPS.gov</b></span>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </nav>
         </div>
     </section>
-    <!-- "About" end -->
+
+    </div>
+    </div>
+    </div>
+    </div>
+
+    <section class="hero is-fullheight">
+        <div class="hero-body">
+            <header>
+                <h1 class="title">
+                    <strong>About</strong>
+                </h1>
+                <nav>
+
+                    <p class="js-error-message"></p>
+                </nav>
+
+
+                <div class="container">
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi illo dicta,
+                        corporis eveniet libero reprehenderit officia magnam!
+                        Iure corporis necessitatibus praesentium, ex minima, hic,
+                        tenetur pariatur libero at odio consectetur!<br><br>
+
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi illo dicta,
+                        corporis eveniet libero reprehenderit officia magnam!
+                        Iure corporis necessitatibus praesentium, ex minima, hic,
+                        tenetur pariatur libero at odio consectetur!<br><br>
+
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi illo dicta,
+                        corporis eveniet libero reprehenderit officia magnam!
+                        Iure corporis necessitatibus praesentium, ex minima, hic,
+                        tenetur pariatur libero at odio consectetur!<br><br>
+                    </p>
+    </section>
+    </div>
+    </div>
+    </section>
+
+    <!-- Hero footer at the bottom
+                <footer>
+                    <div class="hero-foot is-info">
+                        <nav class="tabs">
+                            <div class="container">
+                                <ul>
+                                    <li class="is-active"><a href="./about.html">About</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </footer> -->
+
+    <!-- Relative Path to JS link -->
+    <script type="text/javascript" src="assets/js/script.js"></script>
 </body>
 
-<footer>
-    <!-- footer -->
-    <footer>
-        <h2>PARK IT!</h2>
-        <div>
-            &copy; 2021 PARK IT!
-            <ul>
-                <a href="./about.html">About</a>
-            </ul>
-        </div>
-    </footer>
-    <!-- footer end -->
-</footer>
+<!-- Footer Hero -->
+<section class="hero is-info is-small">
+    <div class="hero-head">
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-brand">
+                    <p class="subtitle">
+                        2021 Park Buddy
+                    </p>
+                    </a>
+                    <span class="navbar-burger" data-target="navbarMenuHeroB">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                </div>
+                <div id="navbarMenuHeroB" class="navbar-menu">
+                    <div class="navbar-end">
+                        <a class="navbar-item is-inverted" href="./index.html">
+                            <b>Home</b>
+                        </a>
+                        <a class="navbar-item" href="./about.html">
+                            <b>About</b>
+                        </a>
+                        <span class="navbar-item">
+                            <a class="button is-info is-inverted" href="https://www.nps.gov/index.htm">
+                                <span class="icon">
+                                
+                                </span>
+                                <span><b>NPS.gov</b></span>
+                            </a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    </p>
+    </div>
+    </div>
+
+    </nav>
+    </div>
+</section>
+<!-- End Footer Hero -->>
 
 </html>

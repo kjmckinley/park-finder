@@ -1,6 +1,11 @@
+<<<<<<< HEAD
 * {box-sizing:border-box}
 
+=======
+/* PARK BUDD */
+>>>>>>> 0726c017c6ec3b705030378152b5346cb97ec2c8
 
+* {box-sizing:border-box}
 
 header {
     padding: 20px 35px;
@@ -27,7 +32,7 @@ body {
     background-size: cover;
 }
 
-a {
+.title a {
     color: ivory
 }
 
@@ -127,17 +132,18 @@ a {
 }
 
 .map-container {
-    height: 50vh;
+    height: 100vh;
     width: 50vw;
     float: left;
     margin: 20px;
 }
 .park-container {
-    height: 50vh;
+    height: 100vh;
     width: 25vw;
     float: left;
     margin: 20px;
     margin-left: 40px;
+    overflow: hidden;
 
     border: 1px solid black;
     border-radius: 5px;
@@ -191,4 +197,8 @@ footer {
     height: 50px;
     border-radius: 50%;
     cursor: pointer;
+<<<<<<< HEAD
 } */
+=======
+} */
+>>>>>>> 0726c017c6ec3b705030378152b5346cb97ec2c8
