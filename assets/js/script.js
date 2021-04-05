@@ -62,18 +62,19 @@ var marker = new mapboxgl.Marker({
 
 };
 
-//
+// Used from rposner16
 function formatQueryParams(params) {
     const queryItems = Object.keys(params).map(key => `${[encodeURIComponent(key)]}=${encodeURIComponent(params[key])}`);
     return queryItems.join('&');
 }
 
+// Displays the results of the user search
 function displayResults(responseJson, userResultsnum) {
     console.log(responseJson);
     // Clearing previous results
     $('.js-error-message').empty();
     $('.list-of-results').empty();
-    // Looping through the response and formatting results
+    // Looping through the search and populating results
     for (let i = 0; i < responseJson.data.length & i < userResultsnum; i++) {
         $('.list-of-results').append(`<li><h3><a class ='park-title' target = '_blank' href="${responseJson.data[i].url}">${responseJson.data[i].fullName}</a></h3>
         <p class='park-description'>${responseJson.data[i].description}</p>
@@ -85,17 +86,17 @@ function displayResults(responseJson, userResultsnum) {
 }
 
 function getParks(baseUrl, stateArray, userResultsnum, apiKey) {
-    // Setting up parameters
+    // Setting up parameters for the state search
     const params = {
         stateCode: stateArray,
         limit: userResultsnum
     }
-    // Creating url string
+    // Creating url string to veiw in the console
     const queryString = formatQueryParams(params);
     const url = baseUrl + '?' + queryString + '&api_key=' + apiKey;
     console.log(url);
    
-    // Fetch information, if there's an error display a message
+    // Fetch state results, if there's an error display a message
     fetch(url)
     .then(response => {
         if (response.ok) {
