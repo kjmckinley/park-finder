@@ -53,13 +53,11 @@ function setUpMap() {
 
     //add marker to set coordinates
     // Set options
-var marker = new mapboxgl.Marker({
-    color: "green",
-    draggable: true
-    }).setLngLat([-95.67515759999999, 39.0473451])
-    .addTo(map);
-
-
+// var marker = new mapboxgl.Marker({
+//     color: "green",
+//     draggable: true
+//     }).setLngLat([-95.67515759999999, 39.0473451])
+//     .addTo(map);
 };
 
 // Used from rposner16
@@ -124,75 +122,6 @@ function watchUserForm() {
 }
 
 watchUserForm();
-
-// Add event listener to search button
-// let buttonEl = document.getElementById("find-park");
-// buttonEl.addEventListener("click", function () {
-//     console.log(parkSearch);
-// });
-
-// get.addEventListener("click", function () {
-//     // call api
-// });
-
-// let lat = 30.4390489;
-// let lng = -97.7360259;
-
-// let marker = new mapboxgl.Marker()
-// .setLngLat([lng, lat])
-// .addTo(map);
-
-// Park search click event
-
-// var searchEl = 
-// parkSearch 
-
-// var geojson = {
-//     type: 'FeatureCollection',
-//     features: [
-//         {
-//             type: 'Feature',
-//             geometry: {
-//                 type: 'Point',
-//                 coordinates: [38.9071923, -77.0368707 ]
-//             },
-//             properties: {
-//                 title: 'Mapbox',
-//                 description: 'Washington, D.C.'
-//             }
-//         },
-//         {
-//             type: 'Feature',
-//             geometry: {
-//                 type: 'Point',
-//                 coordinates: [37.7749295, -122.4194155]
-//             },
-//             properties: {
-//                 title: 'Mapbox',
-//                 description: 'San Francisco, Ca'
-//             }
-//         }
-//     ]
-// };
-
-// // add markers to map
-// geojson.features.forEach(function (marker) {
-//     // create a DOM element for the marker
-//     var el = document.createElement('div');
-//     console.log(marker.geometry.coordinates);
-//     el.className = 'marker';
-//     el.style.backgroundImage =
-// 'url(https://placekitten.com/g/' +
-// marker.properties.iconSize.join('/') +
-// '/)';
-// el.style.width = marker.properties.iconSize[0] + 'px';
-// el.style.height = marker.properties.iconSize[1] + 'px';
-// el.style.backgroundSize = '100%';
-//     // add marker to map
-//     new mapboxgl.Marker(el)
-//         .setLngLat(marker.geometry.coordinates)
-//         .addTo(map);
-// });
 
 setUpMap();
 parkSearch();

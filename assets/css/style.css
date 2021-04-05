@@ -1,4 +1,4 @@
-/* PARK BUDD */
+/* PARK BUDDY */
 
 * {box-sizing:border-box}
 
@@ -132,7 +132,7 @@ body {
 }
 
 .map-container {
-    height: 100vh;
+    height: 50vh;
     width: 50vw;
     float: left;
     margin: 20px;
@@ -186,10 +186,6 @@ footer {
   from {opacity: .4}
   to {opacity: 1}
 }
-
-
-
-
 
 /* .marker {
     background-image: url(/assests/img/36-369401_location-marker-icon-google-maps-pointer-elsavadorla-google.png);

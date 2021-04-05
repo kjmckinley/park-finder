@@ -16,7 +16,7 @@
     <link rel="icon" href="https://i.pinimg.com/originals/b8/43/e8/
                            b843e8a2da1ac1f0a28b9394015d1a43.png" />
     <!-- Relative Path to CSS Link -->
-    <link rel="stylesheet" href="assests/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.3.1.js"
         integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
@@ -35,8 +35,7 @@
         href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css"
         type="text/css">
 
-    
-<!-- Header Hero/Jumbotron -->
+    <!-- Header Hero/Jumbotron -->
     <section class="hero is-info is-small">
         <div class="hero-head">
             <nav class="navbar">
@@ -60,10 +59,13 @@
                             <a class="navbar-item" href="./about.html">
                                 <b>About</b>
                             </a>
+                            <a class="navbar-item" href="./gallery.html">
+                                <b>Gallery</b>
+                            </a>
                             <span class="navbar-item">
                                 <a class="button is-info is-inverted" href="https://www.nps.gov/index.htm">
                                     <span class="icon">
-                                        
+
                                     </span>
                                     <span><b>NPS.Gov</b></span>
                                 </a>
@@ -86,26 +88,24 @@
                     <strong>U.S. National Parks Finder</strong>
                 </h1>
                 <nav>
-                    
-                   
-                        <form class ="list-form">
-                            <lable for ="user-search"> Enter Your State Abbreviation: </lable>
-                            <input type="search" name="user-search" id="js-user-search" placeholder="Natty Park Finder" required />
-                           
-                            <label for="user-results-num"># of Results: </label>
-                            <input type="number" name="user-results-num" id="js-user-results-num" value="3">
+                    <form class="list-form">
+                        <lable for="user-search"> Enter Your State Abbreviation: </lable>
+                        <input type="search" name="user-search" id="js-user-search" placeholder="Natty Park Finder"
+                            required />
+                        <label for="user-results-num"># of Results: </label>
+                        <input type="number" name="user-results-num" id="js-user-results-num" value="3">
 
-                            <input type="submit" value="Search!">
-                        </form>
+                        <input type="submit" value="Search!">
+                    </form>
 
-                        <p class="js-error-message"></p>          
+                    <p class="js-error-message"></p>
 
                     <p class="js-error-message"></p>
 
                 </nav>
 
                 <div class="container">
-                    <div class="map-container" id="map"></div>
+                    <div class="map-container" class="marker" id="map"></div>
 
                     <div class="park-container hidden">
                         <section class="results hidden" role="region">
@@ -114,34 +114,15 @@
                     </div>
                 </div>
     </section>
-
-    <!-- Relative Path to JS link -->
-    <script type="text/javascript" src="assets/js/script.js"></script>
-</body>
-
-<!-- Footer Hero -->
-<section class="hero is-info is-small">
-    <div class="hero-head">
-        <nav class="navbar">
-            <div class="container">
-                <div class="navbar-brand">
-                    <p class="subtitle">
-                        2021 Park Buddy
-                    </p>
-                    </a>
-                    <span class="navbar-burger" data-target="navbarMenuHeroB">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </span>
-                </div>
-                <div id="navbarMenuHeroB" class="navbar-menu">
-                    <div class="navbar-end">
-                        <a class="navbar-item is-inverted" href="./index.html">
-                            <b>Home</b>
-                        </a>
-                        <a class="navbar-item" href="./about.html">
-                            <b>About</b>
+    <!-- Footer Hero -->
+    <section class="hero is-info is-small">
+        <div class="hero-head">
+            <nav class="navbar">
+                <div class="container">
+                    <div class="navbar-brand">
+                        <p class="subtitle">
+                            &copy; 2021 Park Buddy
+                        </p>
                         </a>
                         <span class="navbar-item">
                             <a class="button is-info is-inverted" href="https://www.nps.gov/index.html">
@@ -152,18 +133,38 @@
                             </a>
                         </span>
                     </div>
+                    <div id="navbarMenuHeroB" class="navbar-menu">
+                        <div class="navbar-end">
+                            <a class="navbar-item is-inverted" href="./index.html">
+                                <b>Home</b>
+                            </a>
+                            <a class="navbar-item" href="./about.html">
+                                <b>About</b>
+                            </a>
+                            <span class="navbar-item">
+                                <a class="button is-info is-inverted" href="https://www.nps.gov/index.htm">
+                                    <span class="icon">
+
+                                    </span>
+                                    <span><b>NPS.gov</b></span>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </nav>
+        </div>
+
+        </p>
+        </div>
+        </div>
+
         </nav>
-    </div>
-
-    </p>
-    </div>
-    </div>
-
-    </nav>
-    </div>
-</section>
-<!-- End Footer Hero -->>
+        </div>
+    </section>
+    <!-- End Footer Hero -->
+    <!-- Relative Path to JS link -->
+    <script type="text/javascript" src="./assets/js/script.js"></script>
+</body>
 
 </html>
