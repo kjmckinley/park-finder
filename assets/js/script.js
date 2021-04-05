@@ -122,25 +122,6 @@ function watchForm() {
 
 $(watchForm);
 
-// Add event listener to search button
-// let buttonEl = document.getElementById("find-park");
-// buttonEl.addEventListener("click", function () {
-//     console.log(parkSearch);
-// });
-
-// get.addEventListener("click", function () {
-//     // call api
-// });
-
-// let lat = 30.4390489;
-// let lng = -97.7360259;
-
-// let marker = new mapboxgl.Marker()
-// .setLngLat([lng, lat])
-// .addTo(map);
-
-// Park search click event
-
 // var searchEl = 
 // parkSearch 
 
