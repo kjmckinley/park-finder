@@ -35,7 +35,7 @@ THEN I am presented with directions.
 ```
 The following image/animation demonstrates the application functionality:
 
-![application demo](./assests/images/Park-Buddy.png)
+![application demo](./assets/images/Park-Buddy.png)
 
 ## Application-Links:
 - GitHub Repo Link: https://github.com/kjmckinley/park-finder
