@@ -59,6 +59,7 @@ var marker = new mapboxgl.Marker({
     }).setLngLat([-95.67515759999999, 39.0473451])
     .addTo(map);
 
+
 };
 
 //
@@ -75,11 +76,12 @@ function displayResults(responseJson, maxResults) {
     // Looping through the response and formatting results
     for (let i = 0; i < responseJson.data.length & i < maxResults; i++) {
         $('.list-of-results').append(`<li><h3><a class ='park-title' target = '_blank' href="${responseJson.data[i].url}">${responseJson.data[i].fullName}</a></h3>
-        <p class='park-description'>${responseJson.data[i].description}</p><input type="submit" value="Directions!">
+        <p class='park-description'>${responseJson.data[i].description}</p>
         </li>`);
     }
 
     $('.results').removeClass('hidden');
+    $('.park-container').removeClass('hidden');
 }
 
 function getParks(baseUrl, stateArr, maxResults, apiKey) {
@@ -113,14 +115,14 @@ function watchForm() {
         event.preventDefault();
         const baseUrl = 'https://api.nps.gov/api/v1/parks'
         const stateArr = $('#js-user-search').val().split(",");
-        const maxResults = 3;
+        const maxResults = 10;
         // Insert your own NPS API key for the value of apiKey.
         const apiKey = 'hDoeeZ7apdh5CLqUvw666RjMerqx0fxT6xfnGErl';
         getParks(baseUrl, stateArr, maxResults, apiKey);
     })
 }
 
-$(watchForm);
+watchForm();
 
 // Add event listener to search button
 // let buttonEl = document.getElementById("find-park");
