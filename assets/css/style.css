@@ -18,6 +18,10 @@ h1 {
     color: ivory;
 }
 
+label {
+  margin: 15px;
+}
+
 body {
     background-image: url("../images/bluebonnets.jpg");
     background-color: cornflowerblue;
@@ -26,6 +30,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 
 .title a {
     color: ivory
@@ -133,7 +138,8 @@ body {
     margin: 20px;
 }
 .park-container {
-    height: 100vh;
+    flex-grow: 1;
+    /* height: 100vh; */
     width: 25vw;
     float: left;
     margin: 20px;
