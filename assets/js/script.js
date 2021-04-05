@@ -53,47 +53,48 @@ function setUpMap() {
 
     //add marker to set coordinates
     // Set options
-var marker = new mapboxgl.Marker({
-    color: "green",
-    draggable: true
-    }).setLngLat([-95.67515759999999, 39.0473451])
-    .addTo(map);
-
+// var marker = new mapboxgl.Marker({
+//     color: "green",
+//     draggable: true
+//     }).setLngLat([-95.67515759999999, 39.0473451])
+//     .addTo(map);
 };
 
-//
+// Used from rposner16
 function formatQueryParams(params) {
     const queryItems = Object.keys(params).map(key => `${[encodeURIComponent(key)]}=${encodeURIComponent(params[key])}`);
     return queryItems.join('&');
 }
 
-function displayResults(responseJson, maxResults) {
+// Displays the results of the user search
+function displayResults(responseJson, userResultsnum) {
     console.log(responseJson);
     // Clearing previous results
     $('.js-error-message').empty();
     $('.list-of-results').empty();
-    // Looping through the response and formatting results
-    for (let i = 0; i < responseJson.data.length & i < maxResults; i++) {
+    // Looping through the search and populating results
+    for (let i = 0; i < responseJson.data.length & i < userResultsnum; i++) {
         $('.list-of-results').append(`<li><h3><a class ='park-title' target = '_blank' href="${responseJson.data[i].url}">${responseJson.data[i].fullName}</a></h3>
         <p class='park-description'>${responseJson.data[i].description}</p>
         </li>`);
     }
 
     $('.results').removeClass('hidden');
+    $('.park-container').removeClass('hidden');
 }
 
-function getParks(baseUrl, postalArr, maxResults, apiKey) {
-    // Setting up parameters
+function getParks(baseUrl, stateArray, userResultsnum, apiKey) {
+    // Setting up parameters for the state search
     const params = {
-        postalCode: postalArr,
-        limit: maxResults
+        stateCode: stateArray,
+        limit: userResultsnum
     }
-    // Creating url string
+    // Creating url string to veiw in the console
     const queryString = formatQueryParams(params);
     const url = baseUrl + '?' + queryString + '&api_key=' + apiKey;
     console.log(url);
    
-    // Fetch information, if there's an error display a message
+    // Fetch state results, if there's an error display a message
     fetch(url)
     .then(response => {
         if (response.ok) {
@@ -101,26 +102,26 @@ function getParks(baseUrl, postalArr, maxResults, apiKey) {
         }
         throw new Error(response.statusText);
     })
-    .then(responseJson => displayResults(responseJson, maxResults))
+    .then(responseJson => displayResults(responseJson, userResultsnum))
     .catch(err => {
         $('.js-error-message').text(`Something went wrong: ${err.message}`);
     });
 }
 
 // Watch search form for submit, call getParks
-function watchForm() {
+function watchUserForm() {
     $('.list-form').on('submit', function() {
         event.preventDefault();
         const baseUrl = 'https://api.nps.gov/api/v1/parks'
-        const postalArr = $('#js-user-search').val().split(",");
-        const maxResults = 3;
+        const stateArray = $('#js-user-search').val().split(",");
+        const userResultsnum = $('#js-user-results-num').val();
         // Insert your own NPS API key for the value of apiKey.
         const apiKey = 'hDoeeZ7apdh5CLqUvw666RjMerqx0fxT6xfnGErl';
-        getParks(baseUrl, postalArr, maxResults, apiKey);
+        getParks(baseUrl, stateArray, userResultsnum, apiKey);
     })
 }
 
-$(watchForm);
+watchUserForm();
 
 // Add event listener to search button
 // let buttonEl = document.getElementById("find-park");

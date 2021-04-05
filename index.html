@@ -35,19 +35,7 @@
         href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css"
         type="text/css">
 
-    <!-- <section class="hero is-active is-info">
-        <div class="hero-body">
-            <div class="container">
-                <h1 class="title">Park Buddy</h1>
-                <h2 class="subtitle">U.S. National Parks Finder</h2>
-                <div class="field is-grouped is-grouped-right">
-                    <p class="control">
-
-                    <form class="list-form">
-                        <lable for="user-search"> Enter your zipcode: </lable>
-                        <input type="search" name="user-search" id="js-user-search" placeholder="Find Your Park"
-                            required /> -->
-
+    
 <!-- Header Hero/Jumbotron -->
     <section class="hero is-info is-small">
         <div class="hero-head">
@@ -91,22 +79,6 @@
     </section>
     <!-- End Hero/Jumbotron -->
 
-
-    <!-- <form class="list-form">
-                                        <lable for="user-search"> Enter your zipcode: </lable>
-                                        <input type="search" name="user-search" id="js-user-search" placeholder="Natty Park Finder"
-                                            required />
-                                        <input type="submit" value="Search!">
-                                    </form> -->
-    </div>
-    </div>
-    </div>
-    <!-- a class="button is-small is-primary">
-                                Search
-                              </a> -->
-    </p>
-    </div>
-
     <section class="hero">
         <div class="hero-body">
             <header>
@@ -114,11 +86,15 @@
                     <strong>U.S. National Parks Finder</strong>
                 </h1>
                 <nav>
-
+                    
                    
                         <form class ="list-form">
                             <lable for ="user-search"> Enter Your State Abbreviation: </lable>
                             <input type="search" name="user-search" id="js-user-search" placeholder="Natty Park Finder" required />
+                           
+                            <label for="user-results-num"># of Results: </label>
+                            <input type="number" name="user-results-num" id="js-user-results-num" value="3">
+
                             <input type="submit" value="Search!">
                         </form>
 
@@ -131,7 +107,7 @@
                 <div class="container">
                     <div class="map-container" id="map"></div>
 
-                    <div class="park-container">
+                    <div class="park-container hidden">
                         <section class="results hidden" role="region">
                             <ul class="list-of-results"></ul>
                         </section>
@@ -168,7 +144,7 @@
                             <b>About</b>
                         </a>
                         <span class="navbar-item">
-                            <a class="button is-info is-inverted" href="https://www.nps.gov/index.htm">
+                            <a class="button is-info is-inverted" href="https://www.nps.gov/index.html">
                                 <span class="icon">
 
                                 </span>
