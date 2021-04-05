@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-* {box-sizing:border-box}
-
-=======
-/* PARK BUDD */
->>>>>>> 0726c017c6ec3b705030378152b5346cb97ec2c8
-
 * {box-sizing:border-box}
 
 header {
@@ -132,11 +125,21 @@ body {
 }
 
 .map-container {
-    height: 100vh;
+    height: 50vh;
     width: 50vw;
     float: left;
     margin: 20px;
 }
+
+.marker {
+  background-image: url(../images/36-369401_location-marker-icon-google-maps-pointer-elsavadorla-google.png);
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
 .park-container {
     height: 100vh;
     width: 25vw;
@@ -185,20 +188,3 @@ footer {
   from {opacity: .4}
   to {opacity: 1}
 }
-
-
-
-
-
-/* .marker {
-    background-image: url(/assests/img/36-369401_location-marker-icon-google-maps-pointer-elsavadorla-google.png);
-    background-size: cover;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    cursor: pointer;
-<<<<<<< HEAD
-} */
-=======
-} */
->>>>>>> 0726c017c6ec3b705030378152b5346cb97ec2c8

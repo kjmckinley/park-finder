@@ -16,7 +16,7 @@
     <link rel="icon" href="https://i.pinimg.com/originals/b8/43/e8/
                            b843e8a2da1ac1f0a28b9394015d1a43.png" />
     <!-- Relative Path to CSS Link -->
-    <link rel="stylesheet" href="assests/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.3.1.js"
         integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
@@ -48,7 +48,7 @@
                         <input type="search" name="user-search" id="js-user-search" placeholder="Find Your Park"
                             required /> -->
 
-<!-- Header Hero/Jumbotron -->
+    <!-- Header Hero/Jumbotron -->
     <section class="hero is-info is-small">
         <div class="hero-head">
             <nav class="navbar">
@@ -75,7 +75,7 @@
                             <span class="navbar-item">
                                 <a class="button is-info is-inverted" href="https://www.nps.gov/index.htm">
                                     <span class="icon">
-                                        
+
                                     </span>
                                     <span><b>NPS.Gov</b></span>
                                 </a>
@@ -114,22 +114,21 @@
                     <strong>U.S. National Parks Finder</strong>
                 </h1>
                 <nav>
+                    <form class="list-form">
+                        <lable for="user-search"> Enter Your State Abbreviation: </lable>
+                        <input type="search" name="user-search" id="js-user-search" placeholder="Natty Park Finder"
+                            required />
+                        <input type="submit" value="Search!">
+                    </form>
 
-                   
-                        <form class ="list-form">
-                            <lable for ="user-search"> Enter Your State Abbreviation: </lable>
-                            <input type="search" name="user-search" id="js-user-search" placeholder="Natty Park Finder" required />
-                            <input type="submit" value="Search!">
-                        </form>
-
-                        <p class="js-error-message"></p>          
+                    <p class="js-error-message"></p>
 
                     <p class="js-error-message"></p>
 
                 </nav>
 
                 <div class="container">
-                    <div class="map-container" id="map"></div>
+                    <div class="map-container" class="marker" id="map"></div>
 
                     <div class="park-container">
                         <section class="results hidden" role="region">
@@ -138,56 +137,54 @@
                     </div>
                 </div>
     </section>
-
-    <!-- Relative Path to JS link -->
-    <script type="text/javascript" src="assets/js/script.js"></script>
-</body>
-
-<!-- Footer Hero -->
-<section class="hero is-info is-small">
-    <div class="hero-head">
-        <nav class="navbar">
-            <div class="container">
-                <div class="navbar-brand">
-                    <p class="subtitle">
-                        2021 Park Buddy
-                    </p>
-                    </a>
-                    <span class="navbar-burger" data-target="navbarMenuHeroB">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </span>
-                </div>
-                <div id="navbarMenuHeroB" class="navbar-menu">
-                    <div class="navbar-end">
-                        <a class="navbar-item is-inverted" href="./index.html">
-                            <b>Home</b>
+    <!-- Footer Hero -->
+    <section class="hero is-info is-small">
+        <div class="hero-head">
+            <nav class="navbar">
+                <div class="container">
+                    <div class="navbar-brand">
+                        <p class="subtitle">
+                            2021 Park Buddy
+                        </p>
                         </a>
-                        <a class="navbar-item" href="./about.html">
-                            <b>About</b>
-                        </a>
-                        <span class="navbar-item">
-                            <a class="button is-info is-inverted" href="https://www.nps.gov/index.htm">
-                                <span class="icon">
-
-                                </span>
-                                <span><b>NPS.gov</b></span>
-                            </a>
+                        <span class="navbar-burger" data-target="navbarMenuHeroB">
+                            <span></span>
+                            <span></span>
+                            <span></span>
                         </span>
                     </div>
+                    <div id="navbarMenuHeroB" class="navbar-menu">
+                        <div class="navbar-end">
+                            <a class="navbar-item is-inverted" href="./index.html">
+                                <b>Home</b>
+                            </a>
+                            <a class="navbar-item" href="./about.html">
+                                <b>About</b>
+                            </a>
+                            <span class="navbar-item">
+                                <a class="button is-info is-inverted" href="https://www.nps.gov/index.htm">
+                                    <span class="icon">
+
+                                    </span>
+                                    <span><b>NPS.gov</b></span>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </nav>
+        </div>
+
+        </p>
+        </div>
+        </div>
+
         </nav>
-    </div>
-
-    </p>
-    </div>
-    </div>
-
-    </nav>
-    </div>
-</section>
-<!-- End Footer Hero -->>
+        </div>
+    </section>
+    <!-- End Footer Hero -->
+    <!-- Relative Path to JS link -->
+    <script type="text/javascript" src="./assets/js/script.js"></script>
+</body>
 
 </html>

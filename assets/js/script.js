@@ -7,8 +7,6 @@ let parkSearch = function (park) {
         if (response.ok) {
             response.json().then(function (data) {
                 console.log(data);
-                // console.log(response)
-
             });
         }
     })
@@ -16,11 +14,11 @@ let parkSearch = function (park) {
 
 mapboxgl.accessToken = 'pk.eyJ1Ijoibml6enlubyIsImEiOiJja21zanJpeWYwaWwzMm9wZnlpbWtzMG1vIn0.OgJmZwe7N5Zy3QWgnhM4vw';
 
-// navigator.geolocation.getCurrentPosition(successLocation); get current location
-// navigator.geolocation.getCurrentPosition(successLocation,
-//     errorLocation, {
-//     enableHighAccuracy: true
-// })
+navigator.geolocation.getCurrentPosition(successLocation);
+navigator.geolocation.getCurrentPosition(successLocation,
+    errorLocation, {
+    enableHighAccuracy: true
+})
 
 function successLocation(position) {
     console.log(position);
@@ -31,13 +29,13 @@ function errorLocation() {
     setUpMap([-97.7360259, 30.4390489])
 }
 
-function setUpMap() {
+function setUpMap(center) {
     let map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v11',
         // center: [-97.7360259, 30.4390489],
         // center: [lng, lat],
-        center: [-95.67515759999999, 39.0473451],
+        center: center,
         zoom: 3
     })
 
@@ -51,126 +49,123 @@ function setUpMap() {
 
     map.addControl(directions, "top-left");
 
-    //add marker to set coordinates
+    // add marker to set coordinates 
     // Set options
-var marker = new mapboxgl.Marker({
-    color: "green",
-    draggable: true
-    }).setLngLat([-95.67515759999999, 39.0473451])
-    .addTo(map);
+    // var marker = new mapboxgl.Marker({
+    //     color: "green",
+    //     draggable: true
+    //     }).setLngLat([-95.67515759999999, 39.0473451], [-97.7360259, 30.4390489])
+    //     .addTo(map);
+    // };
 
-};
+    var geojson = {
+        type: 'FeatureCollection',
+        features: [
+            {
+                type: 'Feature',
+                geometry: {
+                    type: 'Point',
+                    coordinates: [38.9071923, -77.0368707]
+                },
+                properties: {
+                    title: 'Mapbox',
+                    description: 'Washington, D.C.'
+                }
+            },
+            {
+                type: 'Feature',
+                geometry: {
+                    type: 'Point',
+                    coordinates: [37.7749295, -122.4194155]
+                },
+                properties: {
+                    title: 'Mapbox',
+                    description: 'San Francisco, Ca'
+                }
+            }
+        ]
+    };
 
-//
-function formatQueryParams(params) {
-    const queryItems = Object.keys(params).map(key => `${[encodeURIComponent(key)]}=${encodeURIComponent(params[key])}`);
-    return queryItems.join('&');
-}
+    // add markers to map
+    geojson.features.forEach(function (marker) {
+        // create a DOM element for the marker
+        var el = document.createElement('div');
+        console.log(marker.geometry.coordinates);
+        el.className = 'marker';
+        el.style.backgroundImage =
+            'url(https://placekitten.com/g/' +
+            marker.properties.iconSize.join('/') +
+            '/)';
+        el.style.width = marker.properties.iconSize[0] + 'px';
+        el.style.height = marker.properties.iconSize[1] + 'px';
+        el.style.backgroundSize = '100%';
+        // add marker to map
+        new mapboxgl.Marker(el)
+            .setLngLat(marker.geometry.coordinates)
+            .addTo(map);
+    });
 
-function displayResults(responseJson, maxResults) {
-    console.log(responseJson);
-    // Clearing previous results
-    $('.js-error-message').empty();
-    $('.list-of-results').empty();
-    // Looping through the response and formatting results
-    for (let i = 0; i < responseJson.data.length & i < maxResults; i++) {
-        $('.list-of-results').append(`<li><h3><a class ='park-title' target = '_blank' href="${responseJson.data[i].url}">${responseJson.data[i].fullName}</a></h3>
+    //
+    function formatQueryParams(params) {
+        const queryItems = Object.keys(params).map(key => `${[encodeURIComponent(key)]}=${encodeURIComponent(params[key])}`);
+        return queryItems.join('&');
+    }
+
+    function displayResults(responseJson, maxResults) {
+        console.log(responseJson);
+        // Clearing previous results
+        $('.js-error-message').empty();
+        $('.list-of-results').empty();
+        // Looping through the response and formatting results
+        for (let i = 0; i < responseJson.data.length & i < maxResults; i++) {
+            $('.list-of-results').append(`<li><h3><a class ='park-title' target = '_blank' href="${responseJson.data[i].url}">${responseJson.data[i].fullName}</a></h3>
         <p class='park-description'>${responseJson.data[i].description}</p>
         </li>`);
-    }
-
-    $('.results').removeClass('hidden');
-}
-
-function getParks(baseUrl, postalArr, maxResults, apiKey) {
-    // Setting up parameters
-    const params = {
-        postalCode: postalArr,
-        limit: maxResults
-    }
-    // Creating url string
-    const queryString = formatQueryParams(params);
-    const url = baseUrl + '?' + queryString + '&api_key=' + apiKey;
-    console.log(url);
-   
-    // Fetch information, if there's an error display a message
-    fetch(url)
-    .then(response => {
-        if (response.ok) {
-            return response.json();
         }
-        throw new Error(response.statusText);
-    })
-    .then(responseJson => displayResults(responseJson, maxResults))
-    .catch(err => {
-        $('.js-error-message').text(`Something went wrong: ${err.message}`);
-    });
-}
 
-// Watch search form for submit, call getParks
-function watchForm() {
-    $('.list-form').on('submit', function() {
-        event.preventDefault();
-        const baseUrl = 'https://api.nps.gov/api/v1/parks'
-        const postalArr = $('#js-user-search').val().split(",");
-        const maxResults = 3;
-        // Insert your own NPS API key for the value of apiKey.
-        const apiKey = 'hDoeeZ7apdh5CLqUvw666RjMerqx0fxT6xfnGErl';
-        getParks(baseUrl, postalArr, maxResults, apiKey);
-    })
-}
+        $('.results').removeClass('hidden');
+    }
 
-$(watchForm);
+    function getParks(baseUrl, postalArr, maxResults, apiKey) {
+        // Setting up parameters
+        const params = {
+            postalCode: postalArr,
+            limit: maxResults
+        }
+        // Creating url string
+        const queryString = formatQueryParams(params);
+        const url = baseUrl + '?' + queryString + '&api_key=' + apiKey;
+        console.log(url);
 
-// var searchEl = 
-// parkSearch 
+        // Fetch information, if there's an error display a message
+        fetch(url)
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                }
+                throw new Error(response.statusText);
+            })
+            .then(responseJson => displayResults(responseJson, maxResults))
+            .catch(err => {
+                $('.js-error-message').text(`Something went wrong: ${err.message}`);
+            });
+    }
 
-// var geojson = {
-//     type: 'FeatureCollection',
-//     features: [
-//         {
-//             type: 'Feature',
-//             geometry: {
-//                 type: 'Point',
-//                 coordinates: [38.9071923, -77.0368707 ]
-//             },
-//             properties: {
-//                 title: 'Mapbox',
-//                 description: 'Washington, D.C.'
-//             }
-//         },
-//         {
-//             type: 'Feature',
-//             geometry: {
-//                 type: 'Point',
-//                 coordinates: [37.7749295, -122.4194155]
-//             },
-//             properties: {
-//                 title: 'Mapbox',
-//                 description: 'San Francisco, Ca'
-//             }
-//         }
-//     ]
-// };
+    // Watch search form for submit, call getParks
+    function watchForm() {
+        $('.list-form').on('submit', function () {
+            event.preventDefault();
+            const baseUrl = 'https://api.nps.gov/api/v1/parks'
+            const postalArr = $('#js-user-search').val().split(",");
+            const maxResults = 3;
+            // Insert your own NPS API key for the value of apiKey.
+            const apiKey = 'hDoeeZ7apdh5CLqUvw666RjMerqx0fxT6xfnGErl';
+            getParks(baseUrl, postalArr, maxResults, apiKey);
+        })
+    }
+};
 
-// // add markers to map
-// geojson.features.forEach(function (marker) {
-//     // create a DOM element for the marker
-//     var el = document.createElement('div');
-//     console.log(marker.geometry.coordinates);
-//     el.className = 'marker';
-//     el.style.backgroundImage =
-// 'url(https://placekitten.com/g/' +
-// marker.properties.iconSize.join('/') +
-// '/)';
-// el.style.width = marker.properties.iconSize[0] + 'px';
-// el.style.height = marker.properties.iconSize[1] + 'px';
-// el.style.backgroundSize = '100%';
-//     // add marker to map
-//     new mapboxgl.Marker(el)
-//         .setLngLat(marker.geometry.coordinates)
-//         .addTo(map);
-// });
+    $(watchForm);
 
-setUpMap();
-parkSearch();
+    setUpMap();
+    parkSearch();
