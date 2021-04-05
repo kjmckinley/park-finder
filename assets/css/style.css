@@ -18,6 +18,10 @@ h1 {
     color: ivory;
 }
 
+label {
+  margin: 15px;
+}
+
 body {
     background-image: url("../images/bluebonnets.jpg");
     background-color: cornflowerblue;
@@ -26,6 +30,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 
 .title a {
     color: ivory

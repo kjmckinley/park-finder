@@ -68,13 +68,13 @@ function formatQueryParams(params) {
     return queryItems.join('&');
 }
 
-function displayResults(responseJson, maxResults) {
+function displayResults(responseJson, userResultsnum) {
     console.log(responseJson);
     // Clearing previous results
     $('.js-error-message').empty();
     $('.list-of-results').empty();
     // Looping through the response and formatting results
-    for (let i = 0; i < responseJson.data.length & i < maxResults; i++) {
+    for (let i = 0; i < responseJson.data.length & i < userResultsnum; i++) {
         $('.list-of-results').append(`<li><h3><a class ='park-title' target = '_blank' href="${responseJson.data[i].url}">${responseJson.data[i].fullName}</a></h3>
         <p class='park-description'>${responseJson.data[i].description}</p>
         </li>`);
@@ -84,11 +84,11 @@ function displayResults(responseJson, maxResults) {
     $('.park-container').removeClass('hidden');
 }
 
-function getParks(baseUrl, stateArr, maxResults, apiKey) {
+function getParks(baseUrl, stateArray, userResultsnum, apiKey) {
     // Setting up parameters
     const params = {
-        stateCode: stateArr,
-        limit: maxResults
+        stateCode: stateArray,
+        limit: userResultsnum
     }
     // Creating url string
     const queryString = formatQueryParams(params);
@@ -103,26 +103,26 @@ function getParks(baseUrl, stateArr, maxResults, apiKey) {
         }
         throw new Error(response.statusText);
     })
-    .then(responseJson => displayResults(responseJson, maxResults))
+    .then(responseJson => displayResults(responseJson, userResultsnum))
     .catch(err => {
         $('.js-error-message').text(`Something went wrong: ${err.message}`);
     });
 }
 
 // Watch search form for submit, call getParks
-function watchForm() {
+function watchUserForm() {
     $('.list-form').on('submit', function() {
         event.preventDefault();
         const baseUrl = 'https://api.nps.gov/api/v1/parks'
-        const stateArr = $('#js-user-search').val().split(",");
-        const maxResults = $('#js-max-results').val();
+        const stateArray = $('#js-user-search').val().split(",");
+        const userResultsnum = $('#js-user-results-num').val();
         // Insert your own NPS API key for the value of apiKey.
         const apiKey = 'hDoeeZ7apdh5CLqUvw666RjMerqx0fxT6xfnGErl';
-        getParks(baseUrl, stateArr, maxResults, apiKey);
+        getParks(baseUrl, stateArray, userResultsnum, apiKey);
     })
 }
 
-watchForm();
+watchUserForm();
 
 // Add event listener to search button
 // let buttonEl = document.getElementById("find-park");
