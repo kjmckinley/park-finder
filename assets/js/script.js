@@ -115,7 +115,7 @@ function watchForm() {
         event.preventDefault();
         const baseUrl = 'https://api.nps.gov/api/v1/parks'
         const stateArr = $('#js-user-search').val().split(",");
-        const maxResults = 10;
+        const maxResults = $('#js-max-results').val();
         // Insert your own NPS API key for the value of apiKey.
         const apiKey = 'hDoeeZ7apdh5CLqUvw666RjMerqx0fxT6xfnGErl';
         getParks(baseUrl, stateArr, maxResults, apiKey);
